@@ -13,7 +13,8 @@ app.use(cors());
 app.use(bodyParser.json());
 connectDB();
 
-app.use("/api", require("./routers/blogsRouter"));
+app.use("/api/auth", require("./routers/authRouter"));
+app.use("/api/blogs", require("./routers/blogsRouter"));
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
